@@ -15,4 +15,12 @@ public class Player {
     return this.name;
   }
 
+  public int cardsInHand(){
+    return hand.size();
+  }
+
+  public void dealToPlayerHand(Cards card){
+    hand.add(card);
+  }
+
 }

@@ -17,4 +17,17 @@ public class PlayerTest {
   public void canGetPlayerName(){
     assertEquals("James", player.getPlayerName());
   }
+
+  @Test
+  public void playerHandStartsEmpty(){
+    assertEquals(0, player.cardsInHand());
+  }
+
+  @Test
+  public void playerCanBeDealtCard(){
+    player.dealToPlayerHand(card);
+    assertEquals(1, player.cardsInHand());
+
+  }
+
 }

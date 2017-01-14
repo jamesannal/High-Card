@@ -27,5 +27,10 @@ public class Deck {
   public void insertCard(Cards card){
     deck.add(card);
   }
+
+  public Cards removeCard(
+    int index){
+    return deck.remove(index);
+  }
   
 }
