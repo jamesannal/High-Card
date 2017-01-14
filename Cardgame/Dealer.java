@@ -26,5 +26,8 @@ public class Dealer {
     players.add(player);
   }
 
-
+  public void dealCard(Player player){
+    Cards dealtCard = deck.removeCard(0);
+    player.dealToPlayerHand(dealtCard); 
+  }
 }
