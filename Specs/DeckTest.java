@@ -15,4 +15,10 @@ public class DeckTest{
   public void canGetDeckType(){
     assertEquals("Ordinary", deck.getDeckType());
   }
+
+  @Test
+  public void
+    canGetNumberOfCardsInDeck(){
+      assertEquals(52, deck.getNumberOfCardsInDeck());
+    }
 }

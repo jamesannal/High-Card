@@ -15,5 +15,9 @@ public class Deck {
   public String getDeckType(){
     return this.decktype;
   }
+
+  public int getNumberOfCardsInDeck(){
+    return this.totalNumberInDeck;
+  }
   
 }
