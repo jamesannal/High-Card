@@ -2,7 +2,7 @@ package Cardgame;
 import java.util.*;
 
 public class Cards{
-  
+
   private CardType type;
   private CardValue value;
 
@@ -20,7 +20,7 @@ public class Cards{
   }
 
   public String actualCard(){
-    return this.value + " of " + this.type;
+    return this.value + " OF " + this.type;
   }
 }
 

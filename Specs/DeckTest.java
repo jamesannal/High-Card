@@ -5,10 +5,12 @@ import Cardgame.*;
 public class DeckTest{
 
   Deck deck;
+  Cards card;
 
   @Before
   public void before(){
     deck = new Deck("Ordinary", 52);
+    card = new Cards(CardType.CLUBS, CardValue.KING);
   }
 
   @Test
@@ -20,5 +22,16 @@ public class DeckTest{
   public void
     canGetNumberOfCardsInDeck(){
       assertEquals(52, deck.getNumberOfCardsInDeck());
-    }
+  }
+
+  @Test
+  public void deckIsEmptyToStart(){
+      assertEquals(0, deck.deckCount());
+  }
+
+  @Test
+  public void canAddCard(){
+    deck.insertCard(card);
+    assertEquals(1, deck.deckCount());
+  }
 }

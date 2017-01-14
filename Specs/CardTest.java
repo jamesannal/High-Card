@@ -15,4 +15,14 @@ public class CardTest{
   public void canGetValue(){
     assertEquals(CardValue.KING, card.getValue());
   }
+
+  @Test
+  public void canGetType(){
+    assertEquals(CardType.CLUBS, card.getType());
+  }
+
+  @Test
+  public void canGetActualCard(){
+    assertEquals("KING OF CLUBS", card.actualCard());
+  }
 }

@@ -19,5 +19,13 @@ public class Deck {
   public int getNumberOfCardsInDeck(){
     return this.totalNumberInDeck;
   }
+
+  public int deckCount(){
+    return deck.size();
+  }
+
+  public void insertCard(Cards card){
+    deck.add(card);
+  }
   
 }
