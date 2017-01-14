@@ -11,5 +11,9 @@ public class Deck {
     this.totalNumberInDeck = totalNumberInDeck;
     this.deck = new ArrayList<Cards>();
   }
+
+  public String getDeckType(){
+    return this.decktype;
+  }
   
 }
