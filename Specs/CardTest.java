@@ -5,10 +5,12 @@ import Cardgame.*;
 public class CardTest{
 
   Cards card;
+  Cards card2;
 
   @Before
   public void before(){
     card = new Cards(CardType.CLUBS, CardValue.KING, CardValue.KING.actualValue);
+    card2 = new Cards(CardType.HEARTS, CardValue.THREE, CardValue.THREE.actualValue);
   }
 
   @Test
@@ -29,5 +31,10 @@ public class CardTest{
   @Test
   public void canSeeCardNumericValue(){
     assertEquals(10, card.getNumericValue());
+  }
+
+  @Test
+  public void cardComparison() {
+    assertEquals(true, card.higherCard(card2));
   }
 }

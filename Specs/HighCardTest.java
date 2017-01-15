@@ -2,46 +2,46 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import Cardgame.*;
 
-public class DealerTest{
-  
-  Dealer dealer;
+public class HighCardTest{
+
+  HighCard game;
   Deck deck;
   Player player;
   Player player2;
+  Dealer dealer;
   Cards card;
   Cards card2;
 
   @Before
   public void before(){
-    dealer = new Dealer();
     deck = new Deck("Ordinary", 52);
     player = new Player("James");
     player2 = new Player("Zach");
+    dealer = new Dealer();
+    game = new HighCard();
     card = new Cards(CardType.CLUBS, CardValue.KING, CardValue.KING.actualValue);
     card2 = new Cards(CardType.DIAMONDS, CardValue.ACE, CardValue.ACE.actualValue);
+
   }
 
   @Test
-  public void dealerStartsWithoutDeck(){
-    assertEquals(null, dealer.hasDeck());
+  public void gameStartsWithNoPlayer(){
+    assertEquals(0, game.playerCount());
   }
 
   @Test
-  public void dealerCanSetupNewDeck(){
-    dealer.setupDeck(deck);
-    assertEquals(deck, dealer.hasDeck());
+  public void canInvitePlayer(){
+    game.inviteNewPlayer(player);
+    assertEquals(1, game.playerCount());
   }
 
   @Test
-  public void dealerStartsWithNoPlayers(){
-    assertEquals(0, dealer.numberOfPlayers());
+  public void canInviteTwoPlayers(){
+    game.inviteNewPlayer(player);
+    game.inviteNewPlayer(player2);
+    assertEquals(2, game.playerCount());
   }
 
-  @Test
-  public void dealerCanInviteNewPlayer(){
-    dealer.inviteNewPlayer(player);
-    assertEquals(1, dealer.numberOfPlayers());
-  }
 
   @Test
   public void dealerCanDealCardToPlayer() {
@@ -56,13 +56,14 @@ public class DealerTest{
   }
 
   @Test
-  public void
-  dealerCanDealFullHandToPlayer() {
+  public void dealerCanDealCardToPlayer2() {
     dealer.setupDeck(deck);
-    dealer.inviteNewPlayer(player);
-    deck.insertCard(card);
+    dealer.inviteNewPlayer(player2);
     deck.insertCard(card2);
-    dealer.dealFullHand(2);
-    assertEquals(2, player.cardsInHand());
+    dealer.dealCard(player2);
+    assertEquals(1, player2.cardsInHand());
+    assertEquals("Zach", player2.getPlayerName());
+    assertEquals(11, card2.getNumericValue());
   }
+
 }

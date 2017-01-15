@@ -28,5 +28,12 @@ public class Cards{
   public int getNumericValue(){
     return this.actualValue = actualValue;
   }
+
+  public boolean higherCard(Cards card) {
+    if(card.getNumericValue() > this.getNumericValue()){
+      return false;
+    }
+    return true;
+  }
 }
 

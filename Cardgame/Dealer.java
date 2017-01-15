@@ -30,4 +30,12 @@ public class Dealer {
     Cards dealtCard = deck.removeCard(0);
     player.dealToPlayerHand(dealtCard); 
   }
+
+  public void dealFullHand(int number){
+    for(int i = 0; i < number; i++){
+      for (Player player :players){
+        dealCard(player);
+      }
+    }
+  }
 }
