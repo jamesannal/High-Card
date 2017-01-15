@@ -7,14 +7,18 @@ public class DealerTest{
   Dealer dealer;
   Deck deck;
   Player player;
+  Player player2;
   Cards card;
+  Cards card2;
 
   @Before
   public void before(){
     dealer = new Dealer();
     deck = new Deck("Ordinary", 52);
     player = new Player("James");
-    card = new Cards(CardType.CLUBS, CardValue.KING, 10);
+    player2 = new Player("Zach");
+    card = new Cards(CardType.CLUBS, CardValue.KING, CardValue.KING.actualValue);
+    card2 = new Cards(CardType.DIAMONDS, CardValue.ACE, CardValue.ACE.actualValue);
   }
 
   @Test
@@ -48,6 +52,9 @@ public class DealerTest{
     assertEquals(0, deck.deckCount());
     assertEquals(1, player.cardsInHand());
     assertEquals("James", player.getPlayerName());
-
+    assertEquals(10, card.getNumericValue());
   }
+
+  @Test
+  public void
 }
