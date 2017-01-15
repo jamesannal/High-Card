@@ -5,10 +5,12 @@ public class Cards{
 
   private CardType type;
   private CardValue value;
+  private int actualValue;
 
-  public Cards(CardType type, CardValue value) {
+  public Cards(CardType type, CardValue value, int actualValue) {
   this.type = type;
   this.value = value;
+  this.actualValue = actualValue;
   }
 
   public CardValue getValue(){
@@ -21,6 +23,10 @@ public class Cards{
 
   public String actualCard(){
     return this.value + " OF " + this.type;
+  }
+
+  public int getNumericValue(){
+    return this.actualValue = actualValue;
   }
 }
 

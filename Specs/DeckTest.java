@@ -10,7 +10,7 @@ public class DeckTest{
   @Before
   public void before(){
     deck = new Deck("Ordinary", 52);
-    card = new Cards(CardType.CLUBS, CardValue.KING);
+    card = new Cards(CardType.CLUBS, CardValue.KING, 10);
   }
 
   @Test

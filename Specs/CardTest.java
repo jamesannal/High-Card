@@ -8,7 +8,7 @@ public class CardTest{
 
   @Before
   public void before(){
-    card = new Cards(CardType.CLUBS, CardValue.KING);
+    card = new Cards(CardType.CLUBS, CardValue.KING, CardValue.KING.actualValue);
   }
 
   @Test
@@ -24,5 +24,10 @@ public class CardTest{
   @Test
   public void canGetActualCard(){
     assertEquals("KING OF CLUBS", card.actualCard());
+  }
+
+  @Test
+  public void canSeeCardNumericValue(){
+    assertEquals(10, card.getNumericValue());
   }
 }
